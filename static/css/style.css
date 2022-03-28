@@ -5,6 +5,25 @@ body{
     margin: 0;
   }
 
+  .header {
+    background-color: #F7EBEC ;
+    width: 100%;
+    margin: 0%;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    border-bottom: 1px;
+    height: 100px;
+    }
+
+    .header h1{
+      margin-left: 47%;
+      font-family: 'Share', cursive;
+      font-size: 60px;
+    }
+
 .topnav a {
     float: left;
     color: #F7EBEC;
@@ -21,12 +40,11 @@ body{
   }
   
   .topnav {
-    overflow: hidden;
     background-color: #1D1E2C ;
     width: 100%;
     margin: 0%;
     padding: 0;
-    top: 0;
+    top: 120;
     left: 0;
     right: 0;
     position: fixed;
@@ -35,6 +53,7 @@ body{
 
 .home-grid {
   display: grid;
+  top: 150px;
   height: 400px;
   grid-gap: 25px;
   padding: 50px;
@@ -51,9 +70,20 @@ body{
   font-size: 15px; 
   border-color: #1D1E2C;
   border: 2px solid;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
+  transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
 
   .home-grid a:hover{
     background-color: #1D1E2C;
     color: #F7EBEC  ;
+    transition-duration: 0.5s;
+    transform: scale(1.05);
   }
+
+
+
+
