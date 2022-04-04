@@ -1,12 +1,12 @@
 body{
     font-family:"Verdana";
-    background-color: #F7EBEC; 
+    background-color: white; 
     padding-top: 45px;
     margin: 0;
   }
 
   .header {
-    background-color: #F7EBEC ;
+    background-color: white ;
     width: 100%;
     margin: 0%;
     padding: 0;
@@ -19,14 +19,14 @@ body{
     }
 
     .header h1{
-      margin-left: 47%;
+      margin-left: 45%;
       font-family: 'Share', cursive;
-      font-size: 60px;
+      font-size: 20px;
     }
 
 .topnav a {
     float: left;
-    color: #F7EBEC;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -35,12 +35,11 @@ body{
   }
     
   .topnav a:hover {
-    border-bottom: 4px solid #929292;
-    transition-duration: 0.3s;
+    background-color: rgb(214, 214, 214);
   }
   
   .topnav {
-    background-color: #1D1E2C ;
+    background-color: white;
     width: 100%;
     margin: 0%;
     padding: 0;
@@ -48,12 +47,14 @@ body{
     left: 0;
     right: 0;
     position: fixed;
+    border-bottom: black 1px solid;
+    border-top: black 1px solid;
     }
 
 
 .home-grid {
   display: grid;
-  top: 150px;
+  top: 160px;
   height: 400px;
   grid-gap: 25px;
   padding: 50px;
