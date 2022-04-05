@@ -7,6 +7,7 @@ body{
 
   .header {
     background-color: white ;
+    height: 100px;
     width: 100%;
     margin: 0%;
     padding: 0;
@@ -14,20 +15,18 @@ body{
     left: 0;
     right: 0;
     position: fixed;
-    border-bottom: 1px;
-    height: 100px;
+    border-top: black 20px solid;
     }
 
-    .header h1{
-      margin-left: 45%;
-      font-family: 'Share', cursive;
-      font-size: 20px;
+  .header h1{
+    margin-left: 45%;
+    font-family: 'Share', cursive;
+    font-size: 50px;
     }
 
-.topnav a {
+  .topnav a {
     float: left;
     color: black;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -43,40 +42,42 @@ body{
     width: 100%;
     margin: 0%;
     padding: 0;
-    top: 120;
     left: 0;
     right: 0;
-    position: fixed;
-    border-bottom: black 1px solid;
-    border-top: black 1px solid;
+    top: 100px;
+    position: relative;
+    border-bottom: lightgray 1px solid;
+    border-top: lightgray 1px solid;
     }
 
 
-.home-grid {
-  display: grid;
-  top: 160px;
-  height: 400px;
-  grid-gap: 25px;
-  padding: 50px;
-  grid-template-columns: 1fr 1fr 1fr;
-  }
+  .home-grid {
+    display: grid;
+    top: 150px;
+    height: 400px;
+    grid-gap: 25px;
+    padding: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: fixed;
+    margin-left: 28%;
+    }
 
 
-.home-grid a{
-  text-decoration: none;
-  color: #1D1E2C;
-  padding: 70px 50px;
-  display: inline-block;
-  border-radius: 25px;
-  font-size: 15px; 
-  border-color: #1D1E2C;
-  border: 2px solid;
-  position: relative;
-  cursor: pointer;
-  -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
-  transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
-  }
+  .home-grid a{
+    margin-top: 20px;
+    text-decoration: none;
+    color: #1D1E2C;
+    padding: 70px 50px;
+    display: inline-block;
+    border-radius: 25px;
+    font-size: 15px; 
+    border-color: #1D1E2C;
+    border: 2px solid;
+    cursor: pointer;
+    -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
+    transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
 
   .home-grid a:hover{
     background-color: #1D1E2C;
@@ -84,7 +85,6 @@ body{
     transition-duration: 0.5s;
     transform: scale(1.05);
   }
-
 
 
 
