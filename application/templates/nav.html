@@ -2,14 +2,13 @@
     <a href="/">Home</a>
     <a href="/about">About</a>
     <div class="dropdown" style="float:right;">
-        <button class="dropbtn">
-          <div class="dropdown-content">
-          <a href="/login">Login</a>
-          <a href="/register">Register</a>
+          
           {% if current_user.is_authenticated %}
           <a href="/logout">Logout</a>
+          {% else %}
+          <a href="/login">Login</a>
+          <a href="/register">Register</a>
           {% endif %}
-          </div>
     </div>      
           
 </div>

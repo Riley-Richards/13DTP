@@ -2,6 +2,8 @@
 {%block content%}
 
 
+
+{% if current_user.is_authenticated %}
 <div class = "home-grid">
     <a href ="/gpus">Graphics Cards</a>
     <a href ="/cpus">Processors</a>
@@ -11,5 +13,21 @@
     <a href ="/psus">Power Supplies</a>
     <a href ="/case">Cases</a>
 </div>
+
+{% else %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<center>
+<h1> Please Login or Register</h1>
+</center>
+
+{% endif %}
 
 {%endblock%}
