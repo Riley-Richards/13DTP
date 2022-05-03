@@ -34,7 +34,7 @@ body{
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    font-family: monospace;
+    font-family: 'Share', cursive;
   }
     
   .topnav a:hover {
@@ -63,7 +63,6 @@ body{
     padding: 50px;
     grid-template-columns: 1fr 1fr 1fr;
     position: fixed;
-    margin-left: 28%;
     }
 
 
@@ -90,8 +89,14 @@ body{
     transform: scale(1.05);
   }
 
-  .register {
-    top: 100px;
+  .error a{
+    text-decoration: none;
+    background: rgb(35, 103, 158);
+    color: white;
+    padding: 12px 24px;
+    display: inline-block;
+    border-radius: 25px;
+    font-size: 15px; 
   }
 
 
