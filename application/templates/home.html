@@ -4,16 +4,40 @@
 
 
 {% if current_user.is_authenticated %}
+<br>
+<br>
+<br>
+<br>
 
 <center>
 <div class = "home-grid">
-    <a href ="/gpus">Graphics Cards</a>
-    <a href ="/cpus">Processors</a>
-    <a href ="/motherboard">Motherboards</a>
-    <a href ="/memory">Memory</a>
-    <a href ="/storage">Storage</a>
-    <a href ="/psus">Power Supplies</a>
-    <a href ="/case">Cases</a>
+    <div class="scrollbutton" onclick='location.href="/gpus";' style = "cursor:pointer;"> 
+        <img src="/static/images/homepage/gpu.png" style="height: 100px; width: auto;">
+    </div> 
+
+    <div class="scrollbutton" onclick='location.href="/cpus";' style = "cursor:pointer;"> 
+        <img src="/static/images/homepage/cpu.png" style="height: 100px; width: auto;">
+    </div> 
+
+    <div class="scrollbutton" onclick='location.href="/motherboard";' style = "cursor:pointer;"> 
+        <img src="/static/images/homepage/mb.png" style="height: 100px; width: auto;">
+    </div> 
+
+    <div class="scrollbutton" onclick='location.href="/memory";' style = "cursor:pointer;"> 
+        <img src="/static/images/homepage/ram.png" style="height: 100px; width: auto;">
+    </div> 
+
+    <div class="scrollbutton" onclick='location.href="/storage";' style = "cursor:pointer;"> 
+        <img src="/static/images/homepage/ssd.png" style="height: 100px; width: auto;">
+    </div> 
+
+    <div class="scrollbutton" onclick='location.href="/psus";' style = "cursor:pointer;"> 
+        <img src="/static/images/homepage/psu.png" style="height: 100px; width: auto;">
+    </div> 
+
+    <div class="scrollbutton" onclick='location.href="/case";' style = "cursor:pointer;"> 
+        <img src="/static/images/homepage/case.png" style="height: 100px; width: auto;">
+    </div> 
 </div>
 </center>
 

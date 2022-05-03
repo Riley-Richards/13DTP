@@ -6,9 +6,7 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
+
 
 <center>
   <h1>Register</h1>
@@ -16,10 +14,9 @@
 <div class = "register">
     <form class="register" method="post">
     {{ form.csrf_token }}
-    {{form.username}}
-    {{form.email}}<br>
-    {{form.password}}<br>
-    {{form.password2}}<br>
+    {{form.email}}<br><br>
+    {{form.password}}<br><br>
+    {{form.password2}}<br><br>
     <input type="submit" value="Register">
     </form>
 </div>

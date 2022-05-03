@@ -12,7 +12,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Sign In')
 
 class RegistrationForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Length(max=256)], render_kw={"placeholder": "email"})
+    email = StringField('Email', validators=[DataRequired(), Length(max=256)], render_kw={"placeholder": "Email"})
     password = PasswordField('Password', validators=[DataRequired(), Length(max=36)], render_kw={"placeholder": "Password"})
     # makes sure 2nd password is same as 1st password
     password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password'), Length(max=36)], render_kw={"placeholder": "Confirm Password"})

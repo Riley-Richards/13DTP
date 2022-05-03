@@ -1,7 +1,6 @@
 body{
     font-family:"Verdana";
-    background-color: white; 
-    padding-top: 45px;
+    background-color: white;
     margin: 0;
   }
 
@@ -9,24 +8,18 @@ body{
     font-family: 'Share', cursive;
   }
 
-  .header {
+  .head {
     background-color: white ;
-    height: 100px;
     width: 100%;
-    margin: 0%;
-    padding: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
+    position: relative;
     border-top: black 20px solid;
     }
 
-  .header h1{
-    margin-left: 45%;
+  .head h1{
     font-family: 'Share', cursive;
     font-size: 50px;
     }
+
 
   .topnav a {
     float: left;
@@ -42,62 +35,67 @@ body{
   }
   
   .topnav {
-    background-color: white;
     width: 100%;
-    margin: 0%;
-    padding: 0;
-    left: 0;
-    right: 0;
-    top: 100px;
     position: relative;
-    border-bottom: lightgray 1px solid;
-    border-top: lightgray 1px solid;
+    border: lightgray 1px solid;
     }
 
 
   .home-grid {
     display: grid;
-    top: 150px;
-    height: 400px;
+    height: auto;
     grid-gap: 25px;
     padding: 50px;
-    grid-template-columns: 1fr 1fr 1fr;
-    position: fixed;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    position: relative;
     }
 
-
-  .home-grid a{
-    margin-top: 20px;
-    text-decoration: none;
-    color: #1D1E2C;
-    padding: 70px 50px;
-    display: inline-block;
-    border-radius: 25px;
-    font-size: 15px; 
-    border-color: #1D1E2C;
-    border: 2px solid;
-    cursor: pointer;
-    -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-    -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
-    transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
-    }
-
-  .home-grid a:hover{
+  .scrollbutton:hover{
     background-color: #1D1E2C;
-    color: #F7EBEC  ;
     transition-duration: 0.5s;
     transform: scale(1.05);
   }
 
   .error a{
     text-decoration: none;
-    background: rgb(35, 103, 158);
+    background: #1D1E2C;
     color: white;
     padding: 12px 24px;
     display: inline-block;
     border-radius: 25px;
     font-size: 15px; 
   }
+
+  .error a:hover{
+    opacity: 85%;
+  }
+
+  input[type=text] {
+    border: none;
+    border-bottom: 2px solid #1D1E2C;
+    padding: 12px 20px;
+    margin: 8px 0;
+    width:20%;
+  }
+
+  input[type=password] {
+    border: none;
+    border-bottom: 2px solid #1D1E2C;
+    padding: 12px 20px;
+    margin: 8px 0;
+    width:20%;
+  }
+
+  input[type=button], input[type=submit], input[type=reset] {
+    background-color: #1D1E2C;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
 
 
 

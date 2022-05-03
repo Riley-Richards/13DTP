@@ -61,36 +61,11 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/gpus')
-def gpu():
-    return render_template('gpu.html')
+@app.route('/product')
+def product():
+    product = product.query.all()
+    return render_template('product.html', product=product)
 
 
-@app.route('/cpus')
-def cpu():
-    return render_template('cpu.html')
 
 
-@app.route('/motherboard')
-def mb():
-    return render_template('mb.html')
-
-
-@app.route('/memory')
-def memory():
-    return render_template('memory.html')
-
-
-@app.route('/storage')
-def storage():
-    return render_template('storage.html')
-
-
-@app.route('/psus')
-def psu():
-    return render_template('psu.html')
-
-
-@app.route('/case')
-def case():
-    return render_template('case.html')

@@ -6,17 +6,15 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
+
 
 <center>
   <h1>Login</h1>
 
   <form class="login" method="post">
   {{form.csrf_token}}
-  {{form.email()}}
-  {{form.password()}}
+  {{form.email()}}<br><br>
+  {{form.password()}}<br><br>
   <input type="submit" value="Login">
 </center>
 {% endblock %}
