@@ -13,3 +13,4 @@ login_manager.init_app(app)
 
 from application import routes
 from application import models
+from application import forms

@@ -13,12 +13,12 @@ body{
     width: 100%;
     position: relative;
     border-top: black 20px solid;
-    }
+  }
 
   .head h1{
     font-family: 'Share', cursive;
     font-size: 50px;
-    }
+  }
 
 
   .topnav a {
@@ -38,7 +38,30 @@ body{
     width: 100%;
     position: relative;
     border: lightgray 1px solid;
-    }
+  }
+
+    .dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
 
   .home-grid {
@@ -48,7 +71,7 @@ body{
     padding: 50px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     position: relative;
-    }
+  }
 
   .scrollbutton:hover{
     background-color: #1D1E2C;
@@ -63,11 +86,15 @@ body{
     padding: 12px 24px;
     display: inline-block;
     border-radius: 25px;
-    font-size: 15px; 
+    font-size: 20px; 
   }
 
   .error a:hover{
     opacity: 85%;
+  }
+
+  .error{
+    font-family: 'Share', cursive;
   }
 
   input[type=text] {
@@ -95,7 +122,6 @@ body{
     margin: 4px 2px;
     cursor: pointer;
   }
-
 
 
 

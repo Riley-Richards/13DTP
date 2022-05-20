@@ -2,10 +2,17 @@
 {%block content%}
 <br><br><br><br>
 
-{% for product in products %}
 
-    <p>{{product[1]}}</p>
 
-{% endfor %}
+{% for p in product %}
+    <p>
+        {{ p.name }} ${{p.price}} <img src="/static/images/product/{{p.image}}" style="height: 100px; width: auto;">
+
+        
+    </p>
+
+{%endfor%}
+
+
 
 {%endblock%}

@@ -3,7 +3,7 @@ from flask import render_template, redirect, flash, url_for, request
 from flask_login import LoginManager, logout_user, login_user, current_user, login_required
 from .forms import LoginForm, RegistrationForm
 from application import models
-
+from .models import Product
 
 @app.route('/')
 def home():
@@ -61,10 +61,18 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/product')
+@app.route('/product', methods=['GET', 'POST'])
 def product():
-    product = models.Product.query.filter_by(id=1).first()
+    product = Product.query.all()
     return render_template('product.html', product=product)
+
+
+@app.route('/product/<int:id>', methods=['GET', 'POST'])
+def productid():
+    productid = Product.query.all()
+    return render_template('productid.html', productid=productid)
+
+
 
 
 
