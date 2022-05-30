@@ -61,15 +61,16 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/product', methods=['GET', 'POST'])
+@app.route('/product')
 def product():
     product = Product.query.all()
     return render_template('product.html', product=product)
 
 
-@app.route('/product/<int:id>', methods=['GET', 'POST'])
+
+@app.route('/product/4')
 def productid():
-    productid = Product.query.all()
+    # productid = Product.query.filter_by(id = Product.id).all()
     return render_template('productid.html', productid=productid)
 
 
