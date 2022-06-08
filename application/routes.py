@@ -64,14 +64,18 @@ def about():
 @app.route('/product')
 def product():
     product = Product.query.all()
+    product_info = [(str(info.id), info.name) for info in product]
+    print("products: " + str(product_info))
     return render_template('product.html', product=product)
 
 
 
-@app.route('/product/4')
-def productid():
-    # productid = Product.query.filter_by(id = Product.id).all()
-    return render_template('productid.html', productid=productid)
+@app.route('/product/<int:id>')
+def productid(id):
+    productid = Product.query.filter_by(id=id)
+    product_data = [(str(info.id), info.name, info.price, info.image, info.info) for info in productid]
+    print("product id: " + str(product_data))
+    return render_template('productid.html', product_data=product_data)
 
 
 

@@ -129,6 +129,26 @@ body{
     cursor: pointer;
   }
 
+  .product {
+    border-bottom: 2px solid #1D1E2C;
+  }
+  
+  .product li{
+    list-style-type: None;
+    padding: 2px;
+  }
+  
+  .product a{
+    vertical-align: top;
+    font-family: 'Share', cursive;
+  }
+  
+  .product:hover{
+    background-color: #1D1E2C;
+    color: white;
+    transition-duration: 0.5s;
+    transform: scale(1.05);
+  }
 
   .productid-grid {
     display: grid;
@@ -143,11 +163,11 @@ body{
     border: 2px solid #c4c4c5;
     border-radius: 2%;
     padding-left: 5%;
+    padding-right: 5%;
   }
 
   .addtocart {
     border: 2px solid #1D1E2C;
-    margin-right: 5%;
   }
 
   .addtocart:hover{
@@ -159,3 +179,4 @@ body{
   .addtocart:hover p{
     color: white;
   } 
+

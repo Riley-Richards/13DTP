@@ -1,15 +1,19 @@
 {%extends "base.html"%}
 {%block content%}
-<br><br><br><br>
+
 
 
 
 {% for p in product %}
-    <p>
-        {{ p.name }} ${{p.price}} <img src="/static/images/product/{{p.image}}" style="height: 100px; width: auto;">
 
-        
-    </p>
+<div class="product" onclick='location.href="/product/{{p.id}}";' style = "cursor:pointer;"> 
+    <ol>
+        <li>
+            <img src="/static/images/product/{{p.image}}" style="height: 100px; width: auto;">
+            <a>{{ p.name }} ${{p.price}}</a>
+        </li>
+    </ol>
+</div> 
 
 {%endfor%}
 
