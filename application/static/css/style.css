@@ -180,3 +180,13 @@ body{
     color: white;
   } 
 
+
+  .homesale-grid {
+    display: grid;
+    height: auto;
+    grid-gap: 25px;
+    padding: 50px;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    background-color: #f0efef;
+  }
