@@ -1,22 +1,33 @@
 {%extends "base.html"%}
 {%block content%}
 
+<div class="sidenav">
+    <a href="#">Graphics Cards</a>
+    <a href="#">Processors</a>
+    <a href="#">Memory</a>
+    <a href="#">Motherboards</a>
+    <a href="#">Storage</a>
+    <a href="#">Power Supplies</a>
+    <a href="#">Cases</a>
+  </div>
 
+<div class = "product-grid">
+    
+    {% for p in product %}
 
+    <div class="product" onclick='location.href="/product/{{p.id}}";' style = "cursor:pointer;"> 
+        
+        <center>
+        <img src="/static/images/product/{{p.image}}" style="height: 100px; width: auto;">
+        <h1>{{ p.name }} </h1>
+        <h2>${{p.price}}</h2>
+        </center>
 
-{% for p in product %}
+    </div> 
 
-<div class="product" onclick='location.href="/product/{{p.id}}";' style = "cursor:pointer;"> 
-    <ol>
-        <li>
-            <img src="/static/images/product/{{p.image}}" style="height: 100px; width: auto;">
-            <a>{{ p.name }} ${{p.price}}</a>
-        </li>
-    </ol>
-</div> 
+    {%endfor%}
 
-{%endfor%}
-
+</div>
 
 
 {%endblock%}

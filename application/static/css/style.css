@@ -129,25 +129,25 @@ body{
     cursor: pointer;
   }
 
-  .product {
-    border-bottom: 2px solid #1D1E2C;
+  .product-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 50px;
+    margin-left: 150px;
+    border-bottom: lightgray 2px solid;
   }
-  
-  .product li{
-    list-style-type: None;
-    padding: 2px;
+
+  .product {
+    padding-top: 5%;
   }
   
   .product a{
-    vertical-align: top;
     font-family: 'Share', cursive;
   }
   
   .product:hover{
     background-color: #1D1E2C;
     color: white;
-    transition-duration: 0.5s;
-    transform: scale(1.05);
   }
 
   .productid-grid {
@@ -168,25 +168,84 @@ body{
 
   .addtocart {
     border: 2px solid #1D1E2C;
+    list-style-type: none;
   }
 
   .addtocart:hover{
     background-color: #1D1E2C;
     transition-duration: 0.5s;
     transform: scale(1.05);
-  }
-
-  .addtocart:hover p{
     color: white;
-  } 
-
+  }
 
   .homesale-grid {
     display: grid;
     height: auto;
-    grid-gap: 25px;
+    grid-gap: 75px;
     padding: 50px;
     grid-template-columns: 1fr 1fr;
     position: relative;
     background-color: #f0efef;
+    margin-top: -76px;
   }
+
+  .home_info{
+    padding-top: 12%;
+  }
+
+  .sidenav {
+    height: 100%; 
+    width: 120px; 
+    position: fixed;
+    left: 0;
+    overflow-x: hidden; 
+    padding-top: 20px;
+    border-right: lightgray 1px solid; 
+    margin-left: 1%;
+    padding-right: 1%;
+  }
+
+  .sidenav a {
+    float: left;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Share', cursive;
+    background-image: linear-gradient(
+      to right,
+      #54b3d6,
+      #54b3d6 50%,
+      #000 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .sidenav a:before {
+    content: '';
+    background: #54b3d6;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .sidenav a:hover {
+    background-position: 0;
+  }
+
+  
+
+  .sidenav a:hover::before {
+    width:100%;
+  }
+
