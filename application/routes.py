@@ -74,11 +74,8 @@ def product():
 def productid(id):
     productid = Product.query.filter_by(id=id)
     product_data = [(str(info.id), info.name, info.price, info.image, info.info) for info in productid]
-    print("product id: " + str(product_data))
     return render_template('productid.html', product_data=product_data)
 
-
-
-
-
-
+@app.route('/cart/<int:id>')
+def cart(id):
+    return render_template('cart.html')
