@@ -45,21 +45,7 @@ body{
     border: lightgray 1px solid;
     overflow: hidden;
   }
-
-  .cartbutton {
-    float: left;
-  }
-
-  .cartbutton img:hover{
-    background-color: rgb(214, 214, 214);
-  }
-
-  .cartbutton img{
-    height: 25px;
-    width: auto;
-    padding: 10px 7px;
-    margin-bottom: 0;
-  }
+  
 
 
   .home-grid {
