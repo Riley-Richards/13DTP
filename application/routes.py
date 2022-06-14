@@ -61,13 +61,25 @@ def about():
     return render_template('about.html')
 
 
+@app.route('/cpu')
+def cpu():
+    cpu = Product.query.filter(Product.category_id=="1")
+    cpu_info = [(str(info.id), info.name) for info in cpu]
+    return render_template('cpu.html', cpu=cpu)
+
+
+@app.route('/gpu')
+def gpu():
+    gpu = Product.query.filter(Product.category_id=="2")
+    gpu_info = [(str(info.id), info.name) for info in gpu]
+    return render_template('gpu.html', gpu=gpu)
+
+
 @app.route('/product')
 def product():
     product = Product.query.all()
     product_info = [(str(info.id), info.name) for info in product]
-    print("products: " + str(product_info))
     return render_template('product.html', product=product)
-
 
 
 @app.route('/product/<int:id>')
