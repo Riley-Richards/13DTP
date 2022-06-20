@@ -12,6 +12,8 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(50), nullable=False, unique=True)
     password = db.Column(db.Text, nullable=False)
+    cartuser = db.relationship('Cart', backref='User',  primaryjoin="User.id == Cart.user_id")
+
 
     def set_password(self, password):
         self.password = generate_password_hash(password)
@@ -31,7 +33,7 @@ class Product(db.Model):
     info = db.Column(db.Text, nullable=False)
     image = db.Column(db.String)
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
-
+    cartitem = db.relationship('Cart', backref='Product',  primaryjoin="Product.id == Cart.product_id")
 
 
 class Category(db.Model):
@@ -40,3 +42,10 @@ class Category(db.Model):
    name = db.Column(db.String(50), nullable=False, unique=True)
    info = db.Column(db.Text, nullable=False)
    product = db.relationship('Product', backref='Category',  primaryjoin="Category.id == Product.category_id")
+
+
+class Cart(db.Model):
+    __tablename__ = "cart"
+    id = db.Column(db.Integer, primary_key=True)
+    product_id = db.Column(db.Integer, db.ForeignKey('product.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

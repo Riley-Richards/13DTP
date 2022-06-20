@@ -3,7 +3,7 @@ from flask import render_template, redirect, flash, url_for, request
 from flask_login import LoginManager, logout_user, login_user, current_user, login_required
 from .forms import LoginForm, RegistrationForm
 from application import models
-from .models import Product
+from .models import Product, Cart
 
 @app.route('/')
 def home():
@@ -87,6 +87,13 @@ def productid(id):
     productid = Product.query.filter_by(id=id)
     product_data = [(str(info.id), info.name, info.price, info.image, info.info) for info in productid]
     return render_template('productid.html', product_data=product_data)
+def getproductitem():
+    itemid = product.id
+    productname = product.name
+    productname = Cart(product_id=itemid)
+    db.session.add(product)
+    db.session.commit()
+    
 
 @app.route('/cart/<int:id>')
 def cart(id):
