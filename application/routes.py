@@ -64,21 +64,48 @@ def about():
 @app.route('/cpu')
 def cpu():
     cpu = Product.query.filter(Product.category_id=="1")
-    cpu_info = [(str(info.id), info.name) for info in cpu]
     return render_template('cpu.html', cpu=cpu)
 
 
 @app.route('/gpu')
 def gpu():
     gpu = Product.query.filter(Product.category_id=="2")
-    gpu_info = [(str(info.id), info.name) for info in gpu]
     return render_template('gpu.html', gpu=gpu)
+
+
+@app.route('/mb')
+def mb():
+    mb = Product.query.filter(Product.category_id=="3")
+    return render_template('mb.html', mb=mb)
+
+
+@app.route('/ssd')
+def ssd():
+    ssd = Product.query.filter(Product.category_id=="4")
+    return render_template('storage.html', ssd=ssd)
+
+
+@app.route('/ram')
+def ram():
+    ram = Product.query.filter(Product.category_id=="5")
+    return render_template('memory.html', ram=ram)
+
+
+@app.route('/psu')
+def psu():
+    psu = Product.query.filter(Product.category_id=="6")
+    return render_template('psu.html', psu=psu)
+
+
+@app.route('/case')
+def case():
+    case = Product.query.filter(Product.category_id=="7")
+    return render_template('case.html', case=case)
 
 
 @app.route('/product')
 def product():
     product = Product.query.all()
-    product_info = [(str(info.id), info.name) for info in product]
     return render_template('product.html', product=product)
 
 
