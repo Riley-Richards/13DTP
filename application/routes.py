@@ -60,8 +60,8 @@ def productid(id):
 def cart():
     u_id = current_user.id
     cart = Cart.query.filter_by(user_id=u_id)
-    #products = Product.query.filter_by(id=cart)
-    return render_template('cart.html', cart=cart)
+    products = Product.query.filter_by(id=cart)
+    return render_template('cart.html', products=products)
 
 
 
