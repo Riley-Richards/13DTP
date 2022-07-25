@@ -110,13 +110,12 @@ body{
   .product-grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 50px;
     margin-left: 150px;
-    border-bottom: lightgray 2px solid;
   }
 
   .product {
-    padding-top: 5%;
+    padding: 5%;
+    border-bottom: lightgray 2px solid;
   }
   
   .product a{

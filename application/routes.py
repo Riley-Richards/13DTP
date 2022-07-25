@@ -49,6 +49,23 @@ def logout():
     return redirect(url_for('home'))
 
 
+@app.route('/product/<int:id>')
+def productid(id):
+    productid = Product.query.filter_by(id=id)
+    product_data = [(str(info.id), info.name, info.price, info.image, info.info) for info in productid]
+    return render_template('productid.html', product_data=product_data)
+ 
+
+@app.route('/cart')
+def cart():
+    u_id = current_user.id
+    cart = Cart.query.filter_by(user_id=u_id)
+    #products = Product.query.filter_by(id=cart)
+    return render_template('cart.html', cart=cart)
+
+
+
+
 # 404 ERROR page route
 @app.errorhandler(404)
 def page_not_found(e):
@@ -107,21 +124,3 @@ def case():
 def product():
     product = Product.query.all()
     return render_template('product.html', product=product)
-
-
-@app.route('/product/<int:id>')
-def productid(id):
-    productid = Product.query.filter_by(id=id)
-    product_data = [(str(info.id), info.name, info.price, info.image, info.info) for info in productid]
-    return render_template('productid.html', product_data=product_data)
-def getproductitem():
-    itemid = product.id
-    productname = product.name
-    productname = Cart(product_id=itemid)
-    db.session.add(product)
-    db.session.commit()
-    
-
-@app.route('/cart/<int:id>')
-def cart(id):
-    return render_template('cart.html')

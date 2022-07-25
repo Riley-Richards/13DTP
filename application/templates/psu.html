@@ -1,18 +1,32 @@
 {%extends "base.html"%}
 {%block content%}
-<br><br><br><br><br><br><br><br>
-<b><p>this is the psu page</p></b>
+<div class="sidenav">
+  <a href="/gpu">Graphics Cards</a>
+  <a href="/cpu">Processors</a>
+  <a href="/ram">Memory</a>
+  <a href="/mb">Motherboards</a>
+  <a href="/ssd">Storage</a>
+  <a href="/psu">Power Supplies</a>
+  <a href="/case">Cases</a>
+</div>
 
-<div class="dropdown">
-    <button class="dropbtn">
-        <a href="/product">Products</a>
-    </button>
-    <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-    </div>
-  </div>
+<div class = "product-grid">
+  
+  {% for m in psu %}
+
+  <div class="product" onclick='location.href="/product/{{m.id}}";' style = "cursor:pointer;"> 
+      
+      <center>
+      <img src="/static/images/product/{{m.image}}" style="height: 100px; width: auto;">
+      <h1>{{ m.name }} </h1>
+      <h2>${{m.price}}</h2>
+      </center>
+
+  </div> 
+
+  {%endfor%}
+
+</div>
 
 
 {%endblock%}

@@ -1,6 +1,10 @@
 {%extends "base.html"%}
 {%block content%}
 
-<p>cart page</p>
+
+{% for c in products %}
+    <p>{{c.name}}</p>
+{%endfor%}
+
 
 {%endblock%}
