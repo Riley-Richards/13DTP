@@ -2,9 +2,35 @@
 {%block content%}
 
 
-{% for c in products %}
-    <p>{{c.name}}</p>
+<div class = "cartheader">
+    <h1>Shopping Cart</h1>
+</div>
+
+{% for c in cart %}
+
+<div class = "cart-grid">
+
+    <div class = "cart_image">
+        <img src="/static/images/product/{{c.image}}" style="height: auto; width: 20%;">
+    </div>
+
+    <div class = "cart_name">
+        <p>{{c.name}}</p>
+    </div>
+
+    <div class = "cart_price">
+        <p>${{c.price}}</p>
+    </div>
+
+</div>
+
 {%endfor%}
+
+
+<div class = "columnside">
+    <p>CHECKOUT</p>
+</div>
+
 
 
 {%endblock%}

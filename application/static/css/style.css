@@ -221,8 +221,40 @@ body{
   }
 
   
-
   .sidenav a:hover::before {
     width:100%;
   }
 
+  .cartheader{
+    border-bottom: 3px rgb(204, 204, 204) solid;
+    width: 55%;
+    margin: 5%;
+    padding-bottom: 3%;
+  }
+
+  .cart-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+    border-bottom: 3px rgb(204, 204, 204) solid;
+    width: 55%;
+    margin: 5%;
+  }
+
+  .cart-name{
+    margin-left: 0;
+  }
+
+  .columnside{
+    position: fixed;
+    right: 0;
+    width: 25%;
+    background: rgb(204, 204, 204);
+  }
+
+  .columnside p{   
+    position: relative;
+    float: right;
+    color: black;
+    padding: 14px 16px;
+  }

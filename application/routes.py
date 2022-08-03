@@ -52,16 +52,18 @@ def logout():
 @app.route('/product/<int:id>')
 def productid(id):
     productid = Product.query.filter_by(id=id)
-    product_data = [(str(info.id), info.name, info.price, info.image, info.info) for info in productid]
-    return render_template('productid.html', product_data=product_data)
+    cart_item = Cart(product_id=product)
+    db.session.add(cart_item)
+    db.session.commit()
+    return render_template('productid.html', productid=productid)
  
 
 @app.route('/cart')
 def cart():
     u_id = current_user.id
-    cart = Cart.query.filter_by(user_id=u_id)
-    products = Product.query.filter_by(id=cart)
-    return render_template('cart.html', products=products)
+    subquery = db.session.query(Cart.product_id).filter_by(user_id=u_id).subquery()
+    cart = Product.query.filter(Product.id.in_(subquery)).all()
+    return render_template('cart.html', cart=cart)
 
 
 

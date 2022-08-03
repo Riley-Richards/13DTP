@@ -2,19 +2,20 @@
 {%block content%}
 
 
-{%for pid in product_data%}
+
+{%for pid in productid%}
     <div class = "productid-grid">
 
         <center>
         <div class = "p_image">
-            <img src="/static/images/product/{{pid[3]}}" style="height: auto; width: 70%;">
+            <img src="/static/images/product/{{pid.image}}" style="height: auto; width: 70%;">
         </div>
         </center>
 
         <div class = "p_info">
             <h2>Graphics Cards</h2>
-            <b><h1>{{pid[1]}}</h1></b> 
-            <h2> ${{pid[2]}}</h2>
+            <b><h1>{{pid.name}}</h1></b> 
+            <h2> ${{pid.price}}</h2>
             <center>
             <div class = "addtocart" onclick="getproductitem()" style = "cursor:pointer;">
                 <center><p> ADD TO CART </p></center>
@@ -22,7 +23,7 @@
             </center>
             <br> 
             <h2>Specifications</h2>
-            <p>{{pid[4]}}</p>
+            <p>{{pid.info}}</p>
         </div> 
     </div>
 {%endfor%}
