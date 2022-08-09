@@ -1,7 +1,7 @@
 from application import app, db
 from flask import render_template, redirect, flash, url_for, request
 from flask_login import LoginManager, logout_user, login_user, current_user, login_required
-from .forms import LoginForm, RegistrationForm
+from .forms import LoginForm, RegistrationForm, CartForm
 from application import models
 from .models import Product, Cart
 
@@ -52,10 +52,16 @@ def logout():
 @app.route('/product/<int:id>')
 def productid(id):
     productid = Product.query.filter_by(id=id)
-    cart_item = Cart(product_id=product)
-    db.session.add(cart_item)
-    db.session.commit()
     return render_template('productid.html', productid=productid)
+
+@app.post('/<int:product_id>/add/')
+@login_required
+def add(product_id):
+    cart_item = Product.query.get_or_404(product_id)
+    db.session.add(cart_item)
+    db.session.add(current_user)
+    db.session.commit()
+    return redirect(url_for('cart'))
  
 
 @app.route('/cart')
@@ -64,6 +70,14 @@ def cart():
     subquery = db.session.query(Cart.product_id).filter_by(user_id=u_id).subquery()
     cart = Product.query.filter(Product.id.in_(subquery)).all()
     return render_template('cart.html', cart=cart)
+
+
+@app.post('/delete/<int:id>')
+def delete(id):
+    remove_product = Cart.query.filter_by(id=int(id)).first()
+    db.session.delete(remove_product)
+    db.session.commit()
+    return redirect(url_for('cart'))
 
 
 

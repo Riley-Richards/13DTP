@@ -225,6 +225,22 @@ body{
     width:100%;
   }
 
+  .row {
+    display: grid;
+    grid-auto-columns: 1fr 30%;
+    height: 630px;
+  }
+
+  .cartleft{
+    width: 150%;
+    grid-column: 1;
+  }
+
+  .cartright{
+    grid-column: 2;
+    background-color: rgb(236, 236, 236);
+  }
+
   .cartheader{
     border-bottom: 3px rgb(204, 204, 204) solid;
     width: 55%;
@@ -234,27 +250,17 @@ body{
 
   .cart-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    position: relative;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     border-bottom: 3px rgb(204, 204, 204) solid;
     width: 55%;
     margin: 5%;
   }
 
-  .cart-name{
-    margin-left: 0;
+  .summary{
+    border-bottom: 3px rgb(204, 204, 204) solid;
+    width: 90%;
+    margin: 5%;
+    padding-bottom: 3%;
+    margin-top: 25%;
   }
 
-  .columnside{
-    position: fixed;
-    right: 0;
-    width: 25%;
-    background: rgb(204, 204, 204);
-  }
-
-  .columnside p{   
-    position: relative;
-    float: right;
-    color: black;
-    padding: 14px 16px;
-  }

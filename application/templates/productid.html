@@ -17,9 +17,11 @@
             <b><h1>{{pid.name}}</h1></b> 
             <h2> ${{pid.price}}</h2>
             <center>
-            <div class = "addtocart" onclick="getproductitem()" style = "cursor:pointer;">
-                <center><p> ADD TO CART </p></center>
-            </div>
+                <div class = "addtocart">
+                    <form method="POST" action="{{ url_for('add', product_id=pid.id) }}">
+                        <input type="submit" value="ADD TO CART">
+                    </form>
+                </div>
             </center>
             <br> 
             <h2>Specifications</h2>

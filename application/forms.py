@@ -17,3 +17,6 @@ class RegistrationForm(FlaskForm):
     # makes sure 2nd password is same as 1st password
     password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password'), Length(max=36)], render_kw={"placeholder": "Confirm Password"})
     submit = SubmitField('Register')
+
+class CartForm(FlaskForm):
+    cart = SubmitField('Add to Cart')

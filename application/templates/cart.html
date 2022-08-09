@@ -2,33 +2,47 @@
 {%block content%}
 
 
-<div class = "cartheader">
-    <h1>Shopping Cart</h1>
-</div>
+<div class = "row">
+    <div class = "cartleft">
 
-{% for c in cart %}
+        <div class = "cartheader">
+            <h1>Shopping Cart</h1>
+        </div>
 
-<div class = "cart-grid">
+        {% for c in cart %}
 
-    <div class = "cart_image">
-        <img src="/static/images/product/{{c.image}}" style="height: auto; width: 20%;">
+        <div class = "cart-grid">
+
+            <div class = "cart_image">
+                <img src="/static/images/product/{{c.image}}" style="height: auto; width: 20%;">
+            </div>
+
+            <div class = "cart_name">
+                <p>{{c.name}}</p>
+            </div>
+
+            <div class = "cart_price">
+                <p>${{c.price}}</p>
+            </div>
+
+            <div class = "remove_item">
+                <form method="POST" action="{{ url_for('delete', id=c.id) }}">
+                    <input type="submit" value="Remove Item">
+                </form>
+            </div>
+        </div>
+
+        {%endfor%}
+
     </div>
 
-    <div class = "cart_name">
-        <p>{{c.name}}</p>
+    <div class = "cartright">
+
+        <div class="summary">
+            <h1>Summary</h1>
+        </div>
+
     </div>
-
-    <div class = "cart_price">
-        <p>${{c.price}}</p>
-    </div>
-
-</div>
-
-{%endfor%}
-
-
-<div class = "columnside">
-    <p>CHECKOUT</p>
 </div>
 
 
