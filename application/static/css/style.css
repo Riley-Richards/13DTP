@@ -254,7 +254,16 @@ body{
     border-bottom: 3px rgb(204, 204, 204) solid;
     width: 55%;
     margin: 5%;
+    padding-bottom: 3%;
+    font-family:sans-serif;
   }
+
+  .cart_image{
+    width: 200%;
+    height: auto;
+  }
+
+  
 
   .summary{
     border-bottom: 3px rgb(204, 204, 204) solid;

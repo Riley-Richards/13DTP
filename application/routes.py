@@ -3,7 +3,7 @@ from flask import render_template, redirect, flash, url_for, request
 from flask_login import LoginManager, logout_user, login_user, current_user, login_required
 from .forms import LoginForm, RegistrationForm, CartForm
 from application import models
-from .models import Product, Cart
+from .models import Product, Cart, User
 
 @app.route('/')
 def home():
@@ -58,9 +58,12 @@ def productid(id):
 @login_required
 def add(product_id):
     cart_item = Product.query.get_or_404(product_id)
-    db.session.add(cart_item)
-    db.session.add(current_user)
-    db.session.commit()
+    if request.method == 'POST':
+        new_cart = request.form['id']
+        cart.product=new_cart
+        db.session.add(cart_item)
+        db.session.add(current_user)
+        db.session.commit()
     return redirect(url_for('cart'))
  
 
@@ -72,7 +75,7 @@ def cart():
     return render_template('cart.html', cart=cart)
 
 
-@app.post('/delete/<int:id>')
+@app.post('/delete/<string:id>')
 def delete(id):
     remove_product = Cart.query.filter_by(id=int(id)).first()
     db.session.delete(remove_product)
