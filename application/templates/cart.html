@@ -42,6 +42,17 @@
         <div class="summary">
             <h1>Summary</h1>
         </div>
+        {% for t in cart %}
+        <div class = "sum-grid">
+            <div class = "sum_name">
+                <h2>{{t.name}}</h2>
+            </div>
+
+            <div class = "sum_price">
+                <h2>${{t.price}}</h2>
+            </div>
+        </div>
+        {%endfor%}
 
     </div>
 </div>

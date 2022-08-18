@@ -7,7 +7,7 @@ from .models import Product, Cart, User
 
 @app.route('/')
 def home():
-    return render_template('home.html', title="Home")
+    return render_template('home.html', title="CMPTR")
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -54,15 +54,14 @@ def productid(id):
     productid = Product.query.filter_by(id=id)
     return render_template('productid.html', productid=productid)
 
-@app.post('/<int:product_id>/add/')
+@app.post('/add/<int:product_id>')
 @login_required
 def add(product_id):
     cart_item = Product.query.get_or_404(product_id)
     if request.method == 'POST':
-        new_cart = request.form['id']
-        cart.product=new_cart
+        userid = current_user.id
         db.session.add(cart_item)
-        db.session.add(current_user)
+        db.session.add(userid)
         db.session.commit()
     return redirect(url_for('cart'))
  
@@ -76,8 +75,8 @@ def cart():
 
 
 @app.post('/delete/<string:id>')
-def delete(id):
-    remove_product = Cart.query.filter_by(id=int(id)).first()
+def delete():
+    remove_product = Cart.query.filter_by(id=Cart.id).first()
     db.session.delete(remove_product)
     db.session.commit()
     return redirect(url_for('cart'))
