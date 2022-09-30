@@ -71,6 +71,8 @@ def cart():
     u_id = current_user.id
     subquery = db.session.query(Cart.product_id).filter_by(user_id=u_id).subquery()
     cart = Product.query.filter(Product.id.in_(subquery)).all()
+    #user = User.query.filter_by(id=u_id).first()
+    #print(user)
     return render_template('cart.html', cart=cart)
 
 
