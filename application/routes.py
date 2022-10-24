@@ -59,9 +59,8 @@ def productid(id):
 def add(product_id):
     cart_item = Product.query.get_or_404(product_id)
     if request.method == 'POST':
-        userid = current_user.id
         db.session.add(cart_item)
-        db.session.add(userid)
+        db.session.add(current_user.id)
         db.session.commit()
     return redirect(url_for('cart'))
  
@@ -71,8 +70,7 @@ def cart():
     u_id = current_user.id
     subquery = db.session.query(Cart.product_id).filter_by(user_id=u_id).subquery()
     cart = Product.query.filter(Product.id.in_(subquery)).all()
-    #user = User.query.filter_by(id=u_id).first()
-    #print(user)
+    user = User.query.filter_by(id=u_id).first()
     return render_template('cart.html', cart=cart)
 
 
@@ -90,12 +88,6 @@ def delete():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html'), 404
-
-
-# about page route
-@app.route('/about')
-def about():
-    return render_template('about.html')
 
 
 @app.route('/cpu')
