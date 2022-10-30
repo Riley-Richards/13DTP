@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.Text, nullable=False)
     cartuser = db.relationship('Cart', backref='User',  primaryjoin="User.id == Cart.user_id")
 
-
+    # hashes the password for privacy reasons
     def set_password(self, password):
         self.password = generate_password_hash(password)
 
